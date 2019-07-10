@@ -1,0 +1,18 @@
+<div>
+  <input
+    type="search"
+    name="search"
+    id="search"
+    placeholder="Buscar filmes, series, documentários, ..."
+    autofocus
+    (keyup)="debounce.next($event.target.value)"
+  />
+</div>
+<ol class="row">
+  <li *ngIf="!movies.length">
+    Você ainda não adicionou nenhuma filme a sua lista :(
+  </li>
+  <li *ngFor="let movie of movies" class="col-4">
+    <app-movie [poster]="movie.poster" [title]="movie.title"></app-movie>
+  </li>
+</ol>
