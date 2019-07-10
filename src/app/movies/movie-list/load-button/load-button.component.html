@@ -1,0 +1,7 @@
+<div class="container" *ngIf="hasMore; else messageTemplate">
+  <button class="btn">+ Ver mais</button>
+</div>
+
+<ng-template #messageTemplate>
+  <p>Não há mais filmes</p>
+</ng-template>

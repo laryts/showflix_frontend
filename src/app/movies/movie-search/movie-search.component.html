@@ -1,8 +1,8 @@
-<section class="filter-wrapper">
+<section id="movie-search" class="filter-wrapper">
   <div class="keyword-wrapper">
     <input
       [formControl]="queryField"
-      type="text"
+      type="search"
       id="keyword"
       placeholder="Search for movies..."
       autofocus
@@ -10,7 +10,18 @@
   </div>
   <ul class="filter-select">
     <li *ngFor="let result of results" class="filter-select-list">
-      {{ result }}
+      <div class="item-poster">
+        <img [src]="result.Poster" alt="result.Title" />
+      </div>
+      <div class="item-hover">
+        <div class="item-content">
+          <span class="title">{{ result["Title"] }}</span>
+          <button class="btn" (click)="addMovie(result)">
+            Adicionar
+          </button>
+        </div>
+      </div>
     </li>
   </ul>
+  <app-load-button (click)="load()" [hasMore]="hasMore"></app-load-button>
 </section>

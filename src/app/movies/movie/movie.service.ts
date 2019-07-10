@@ -13,4 +13,33 @@ export class MovieService {
   listFromUser() {
     return this.http.get<Movie[]>(`${API}/movies`);
   }
+
+  store(movie) {
+    const { Title, Poster, imdbID } = movie;
+    return this.http
+      .post<any[]>(`${API}/movies`, {
+        title: Title,
+        poster: Poster,
+        imdbID: imdbID
+      })
+      .subscribe(
+        data => {
+          console.log("Response", data);
+        },
+        error => {
+          console.log("Error", error);
+        }
+      );
+  }
+
+  delete(id) {
+    return this.http.delete(`${API}/movies/${id}`).subscribe(
+      data => {
+        console.log("Response", data);
+      },
+      error => {
+        console.log("Error", error);
+      }
+    );
+  }
 }

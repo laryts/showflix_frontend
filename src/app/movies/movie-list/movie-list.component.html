@@ -1,4 +1,4 @@
-<div>
+<section id="movie-list">
   <input
     type="search"
     name="search"
@@ -7,12 +7,24 @@
     autofocus
     (keyup)="debounce.next($event.target.value)"
   />
-</div>
-<ol class="row">
-  <li *ngIf="!movies.length">
-    Você ainda não adicionou nenhuma filme a sua lista :(
-  </li>
-  <li *ngFor="let movie of movies" class="col-4">
-    <app-movie [poster]="movie.poster" [title]="movie.title"></app-movie>
-  </li>
-</ol>
+  <ol class="list-select">
+    <li *ngIf="!movies.length">
+      Você ainda não adicionou nenhuma filme a sua lista :(
+    </li>
+    <li *ngFor="let movie of movies" class="list-select-item">
+      <app-movie
+        class="item-poster"
+        [poster]="movie.poster"
+        [title]="movie.title"
+      ></app-movie>
+      <div class="item-hover">
+        <div class="item-content">
+          <span class="title">{{ movie["Title"] }}</span>
+          <button class="btn" (click)="delete(movie.imdbID)">
+            Remover
+          </button>
+        </div>
+      </div>
+    </li>
+  </ol>
+</section>

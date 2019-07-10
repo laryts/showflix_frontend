@@ -8,13 +8,15 @@ import { MovieListComponent } from "./movie-list/movie-list.component";
 import { MovieFormComponent } from "./movie-form/movie-form.component";
 import { MovieSearchComponent } from "./movie-search/movie-search.component";
 import { SearchService } from "./movie-search/search.service";
+import { LoadButtonComponent } from './movie-list/load-button/load-button.component';
 
 @NgModule({
   declarations: [
     MovieComponent,
     MovieListComponent,
     MovieFormComponent,
-    MovieSearchComponent
+    MovieSearchComponent,
+    LoadButtonComponent
   ],
   imports: [HttpClientModule, CommonModule, ReactiveFormsModule],
   providers: [SearchService]

@@ -1,0 +1,6 @@
+@import "../../../../styles.scss";
+
+.container {
+  @extend %flexboxcenter_row;
+  margin: 30px;
+}
