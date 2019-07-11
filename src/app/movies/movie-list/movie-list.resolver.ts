@@ -17,6 +17,6 @@ export class MovieListResolver implements Resolve<Observable<Movie[]>> {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<Movie[]> {
-    return this.service.listFromUser();
+    return this.service.listMovies();
   }
 }

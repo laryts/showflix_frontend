@@ -10,7 +10,7 @@ const API = "http://localhost:3333";
 export class MovieService {
   constructor(private http: HttpClient) {}
 
-  listFromUser() {
+  listMovies() {
     return this.http.get<Movie[]>(`${API}/movies`);
   }
 

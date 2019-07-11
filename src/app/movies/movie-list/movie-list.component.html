@@ -20,9 +20,12 @@
       <div class="item-hover">
         <div class="item-content">
           <span class="title">{{ movie["Title"] }}</span>
-          <button class="btn" (click)="delete(movie.imdbID)">
+          <button class="btn" (click)="delete(movie)">
             Remover
           </button>
+          <a [routerLink]="['/movie/', movie.imdbID]" class="btn">
+            Ver mais
+          </a>
         </div>
       </div>
     </li>

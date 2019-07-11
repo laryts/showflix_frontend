@@ -15,6 +15,11 @@ export class SearchService {
     return this.http.get(url);
   }
 
+  searchById(id: string) {
+    let url = `${this.baseUrl}/?apikey=${this.apiKey}&i=${id}`;
+    return this.http.get(url);
+  }
+
   searchPaginated(queryString: string, page: number) {
     const params = new HttpParams().append("page", page.toString());
     let url = `${this.baseUrl}/?apikey=${

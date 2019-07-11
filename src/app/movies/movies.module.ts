@@ -8,7 +8,11 @@ import { MovieListComponent } from "./movie-list/movie-list.component";
 import { MovieFormComponent } from "./movie-form/movie-form.component";
 import { MovieSearchComponent } from "./movie-search/movie-search.component";
 import { SearchService } from "./movie-search/search.service";
-import { LoadButtonComponent } from './movie-list/load-button/load-button.component';
+import { LoadButtonComponent } from "./movie-list/load-button/load-button.component";
+import { MovieDetailComponent } from "./movie-detail/movie-detail.component";
+import { RouterModule } from "@angular/router";
+
+import { BarRatingModule } from "ngx-bar-rating";
 
 @NgModule({
   declarations: [
@@ -16,9 +20,16 @@ import { LoadButtonComponent } from './movie-list/load-button/load-button.compon
     MovieListComponent,
     MovieFormComponent,
     MovieSearchComponent,
-    LoadButtonComponent
+    LoadButtonComponent,
+    MovieDetailComponent
   ],
-  imports: [HttpClientModule, CommonModule, ReactiveFormsModule],
+  imports: [
+    HttpClientModule,
+    CommonModule,
+    ReactiveFormsModule,
+    RouterModule,
+    BarRatingModule
+  ],
   providers: [SearchService]
 })
 export class MoviesModule {}

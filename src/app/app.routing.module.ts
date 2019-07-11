@@ -5,6 +5,7 @@ import { MovieFormComponent } from "./movies/movie-form/movie-form.component";
 import { NotFoundComponent } from "./errors/not-found/not-found.component";
 import { MovieListResolver } from "./movies/movie-list/movie-list.resolver";
 import { MovieSearchComponent } from "./movies/movie-search/movie-search.component";
+import { MovieDetailComponent } from "./movies/movie-detail/movie-detail.component";
 
 const routes: Routes = [
   { path: "", component: MovieSearchComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
     component: MovieListComponent,
     resolve: { movies: MovieListResolver }
   },
+  { path: "movie/:id", component: MovieDetailComponent },
   { path: "add", component: MovieFormComponent },
   { path: "**", component: NotFoundComponent }
 ];

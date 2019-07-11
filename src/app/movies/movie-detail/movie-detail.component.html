@@ -1,0 +1,48 @@
+<section id="movie-details">
+  <div *ngFor="let item of movie" class="grid">
+    <div>
+      <img [src]="item.Poster" width="100%" />
+    </div>
+    <div>
+      <h1>{{ item.Title }}</h1>
+      <ol class="list">
+        <li class="list-item">
+          <strong>Tipo </strong> <span>{{ item.Type }}</span>
+        </li>
+        <li class="list-item">
+          <strong>Ano </strong> <span>{{ item.Year }}</span>
+        </li>
+        <li class="list-item">
+          <strong>Lançamento </strong> <span>{{ item.Released }}</span>
+        </li>
+        <li class="list-item">
+          <strong>Duração </strong> <span>{{ item.Runtime }}</span>
+        </li>
+        <li class="list-item">
+          <strong>Gênero </strong> <span>{{ item.Genre }}</span>
+        </li>
+        <li class="list-item">
+          <strong>Diretor </strong> <span>{{ item.Director }}</span>
+        </li>
+        <li class="list-item">
+          <strong>Escritor </strong> <span>{{ item.Writer }}</span>
+        </li>
+        <li class="list-item">
+          <strong>Atores </strong> <span>{{ item.Actors }}</span>
+        </li>
+        <li class="list-item">
+          <strong>Resumo </strong> <span>{{ item.Plot }}</span>
+        </li>
+        <li class="list-item">
+          <strong>Prêmios </strong> <span>{{ item.Awards }}</span>
+        </li>
+      </ol>
+      <div>
+        <h2>Queremos saber sua opnião. O que achou do {{ item.Type }}?</h2>
+        <div>
+          <bar-rating [(rate)]="rate" [max]="5"></bar-rating>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

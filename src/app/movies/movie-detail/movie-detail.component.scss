@@ -1,0 +1,9 @@
+@import "../../../styles.scss";
+
+section#movie-details {
+  // @extend %flexboxcenter_row;
+  .grid {
+    display: grid;
+    grid-template-columns: 40% 60%;
+  }
+}
